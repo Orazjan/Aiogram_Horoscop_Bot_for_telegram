@@ -1,9 +1,8 @@
-from aiogram import Bot
-from aiogram.utils import executor
-from Token import dp
 from datetime import datetime
-from Handlers import Client
 import logging
+from aiogram.utils import executor
+from Handlers.Client import dp
+from Handlers import Client
 
 logging.basicConfig(level=logging.INFO)
 current_datetime = datetime.now().time()

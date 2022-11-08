@@ -1,50 +1,53 @@
-from Handlers import Horoscopy
+from Parsering import Parser as Par
+
 
 def Start_command():
     return "Приветствую вас в нашем Боте\
         \nПредлагаю вам другой наш проект\nФильмы: @@AlijoomBot"
+
 
 def help_answer():
     return "Переходите в нашу группу с фильмами\n\
     Там вы найдёте подборки фильмов\n\
         Держи ссылку: https://t.me/Towary_Ineta"
 
-def luboy_answer(message):
+
+def luboy_answer(message, days):
     if message == "Овен":
-        return Horoscopy.Oven()
+        return Par.Oven(days)
 
     elif message == "Телец":
-        return Horoscopy.Telec()
+        return Par.Telec(days)
 
     elif message == "Близнецы":
-        return Horoscopy.Bliznecy()
+        return Par.Bliznecy(days)
 
     elif message == "Рак":
-        return Horoscopy.Rak()
+        return Par.Rak(days)
 
     elif message == "Лев":
-        return Horoscopy.Lev()
+        return Par.Lev(days)
 
     elif message == "Дева":
-        return Horoscopy.Deva()
+        return Par.Deva(days)
 
     elif message == "Весы":
-        return Horoscopy.Vesy()
+        return Par.Vesy(days)
 
     elif message == "Скорпион":
-        return Horoscopy.Scropion()
+        return Par.Scorp(days)
 
     elif message == "Стрелец":
-        return Horoscopy.Strelec()
+        return Par.Strelec(days)
 
     elif message == "Козерог":
-        return Horoscopy.Kozerog()
+        return Par.Kozerog(days)
 
     elif message == "Водолей":
-        return Horoscopy.Vodoley()
+        return Par.Vodoley(days)
 
     elif message == "Рыбы":
-        return Horoscopy.Ryby()
+        return Par.Ryby(days)
 
     else:
-        return "Приветствую"
+        return "Хуйня короче"

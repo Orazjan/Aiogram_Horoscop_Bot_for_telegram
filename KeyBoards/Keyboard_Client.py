@@ -14,5 +14,5 @@ kb11 = KeyboardButton("Водолей")
 kb12 = KeyboardButton("Рыбы")
 
 Keybord = ReplyKeyboardMarkup(resize_keyboard=True)
-Keybord.add(kb1, kb2, kb3).add(kb4, kb5, kb6).add(kb7, kb8, kb9).add(kb10, kb11, kb12)
-
+Keybord.add(kb1, kb2, kb3).add(kb4, kb5, kb6).add(
+    kb7, kb8, kb9).add(kb10, kb11, kb12)
