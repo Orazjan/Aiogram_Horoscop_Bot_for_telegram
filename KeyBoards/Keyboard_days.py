@@ -5,8 +5,8 @@ kb2 = KeyboardButton("Сегодня")
 kb3 = KeyboardButton("Завтра")
 kb4 = KeyboardButton("Неделя")
 kb5 = KeyboardButton("Месяц")
-kb6 = KeyboardButton("2022")
-kb7 = KeyboardButton("2023")
+kb6 = KeyboardButton("2023")
+kb7 = KeyboardButton("2024")
 
 
 Keybday = ReplyKeyboardMarkup(resize_keyboard=True)

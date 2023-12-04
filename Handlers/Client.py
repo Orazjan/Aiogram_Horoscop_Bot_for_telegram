@@ -13,6 +13,7 @@ dp = Dispatcher(bot, storage=storage)
 
 ReplyKeyboardRemove.remove_keyboard = True
 
+
 class work_comands(StatesGroup):
     commamnd = State()
     set_secconds = State()
@@ -25,10 +26,10 @@ async def help_sms(message: types.Message):
     except:
         await message.reply("Общение через ЛС.\nБот @AlijoomBot")
 
+
 async def menu_work(message: types.Message):
     await work_comands.commamnd.set()
     await bot.send_message(message.from_user.id, "Приветствую вас. Выберите свой знак зодиака", reply_markup=Keybord)
-    
 
 
 @dp.message_handler(state=work_comands.commamnd)
@@ -42,33 +43,34 @@ async def process_name(message: types.Message, state: FSMContext):
 
     await work_comands.set_secconds.set()
 
+
 @dp.message_handler(state=work_comands.set_secconds)
 async def set_seconds(message: types.Message, state: FSMContext):
     async with state.proxy() as data:
         if (message.text == "Вчера"):
             data['set_seccond'] = "yesterday"
-            
+
         elif message.text == "Сегодня":
             data['set_seccond'] = "today"
-            
+
         elif message.text == "Завтра":
             data['set_seccond'] = "tomorrow"
-            
+
         elif message.text == "Неделя":
             data['set_seccond'] = "week"
-            
+
         elif message.text == "Месяц":
             data['set_seccond'] = "month"
-            
-        elif message.text == "2022":
-            data['set_seccond'] = "year"
-            
+
         elif message.text == "2023":
-            data['set_seccond'] = "2023"
-        
+            data['set_seccond'] = "year"
+
+        elif message.text == "2024":
+            data['set_seccond'] = "2024"
+
         await bot.send_message(message.from_user.id, Otwety.luboy_answer(data['comandname'], data['set_seccond']), reply_markup=types.ReplyKeyboardRemove())
     await state.finish()
-    
+
 
 def register_Handler_Client(dp: Dispatcher):
     dp.register_message_handler(menu_work, commands=['start'])

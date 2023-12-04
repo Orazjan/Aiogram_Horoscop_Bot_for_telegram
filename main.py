@@ -9,5 +9,4 @@ current_datetime = datetime.now().time()
 
 Client.register_Handler_Client(dp)
 
-#Konec bota
 executor.start_polling(dp, skip_updates=True)
